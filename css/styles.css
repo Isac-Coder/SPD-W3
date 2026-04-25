@@ -1,3 +1,4 @@
+/* Variables CSS para colores y tipografía */
 :root{
     /* para el fondo */
     --primary-color: #0B1320;
@@ -7,11 +8,12 @@
     --secondary-color: #F2B544;
     /*colores del hero*/
     --hero-color: rgba(11,19,32,0.6);
-    /*colore para el texxto*/
+    /*color para el texto*/
     --text-color-principal: #CFCFCF;
     --text-color-secundarios: #2A2A2A;
 }
 
+/* Reset y estilos base */
 *{
     margin: 0;
     padding: 0;
@@ -21,14 +23,21 @@
 body{
     background-color: var(--primary-color);
     color: var(--text-color-principal);
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
+    font-family: 'Poppins', sans-serif;
 }
 
+h1, h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 2px;
+}
+
+/* Estilos para header con Flexbox */
 header{
     display: flex;
     flex-direction: row;
-    margin: 1rem;
+    margin: 0.2rem;
     padding: 0.5rem;
     align-items: center;
 }
@@ -36,10 +45,27 @@ header{
 header a, h1{
     color: var(--text-color-principal);
     text-decoration: none;
-    margin: 0.5rem;
+}
+
+header a{
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 0.2rem;
+    margin: 0.2rem;
+    font-size: 0.85rem;
+}
+
+header a:hover{
+    border: 1px dashed;
+    border-color: var(--secondary-color);
+}
+
+h1{
+    font-size: 1.5rem;
 }
 
 header #links-a{
+    font-size: 1rem;
     margin-left: auto;
 }
 
@@ -47,34 +73,399 @@ header a:hover{
     color:var(--secondary-color)
 }
 
+ol{
+    margin: 2rem;
+}
+
+li{
+    margin: 0.5rem 0;
+}
+
+.logo{
+    width: 50px;
+    height: auto;
+    margin-right: 1rem;
+    border-radius: 50%;
+}
+
+.p-text{
+    margin-top: 1rem;
+    text-align: justify;
+}
+
+
+
+/* Estilos para menú hamburguesa */
+.menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color-principal);
+}
+
+#links-a {
+    display: flex;
+}
+
+/* Estilos para sección Hero con Flexbox */
 #hero{
+    margin: 0;
+    display: flex;
     background-image: url("../assets/hero-fondo.png");
     background-size: cover;
     background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 50vh;
-    font-size: 2.5rem;
+    height: 60vh;
+    position: relative;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--hero-color);
+    z-index: 1;
+}
+
+#text-hero {
+    position: relative;
+    z-index: 2;
 }
 
 #sec-p{
+    display: flex;
     margin-top: 1rem;
 }
 
 .p-hero{
-    margin: 0.5rem;
+    margin: 2rem 1rem 0rem 1rem;
+}
+
+#hero h2{
+    margin: 0rem 1rem 0.5rem;
+    font-size: 1.9rem;
+}
+
+#hero h3 {
+    margin: 0rem 1rem 1rem;
+    font-size: 1.4rem;
+    font-weight: 600;
 }
 
 #hero p{
-    margin: 0.5;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
-.logo{
-    width: 3.9rem;
-    height: auto;
-    border-radius: 50%;
-    object-fit: cover;
+#text-hero{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
+
+.cta-button {
+    margin-top: 2rem;
+    background-color: var(--secondary-color);
+    color: var(--text-color-secundarios);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #d49a3d;
+}
+
+.proximos-eventos{
+    margin: 2rem;
+    
+}
+
+section {
+    margin: 2rem;
+    padding: 2rem;
+    background-color: var(--secundary-color);
+    border-radius: 8px;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.galeria-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.galeria-grid img:hover {
+    transform: scale(1.05);
+}
+
+.testimonios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.testimonios-grid article {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.testimonios-grid p {
+    font-style: italic;
+}
+
+/* Estilos para la sección Food Zones con Grid */
+.food-zones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.zone-card {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 2px solid var(--secondary-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.zone-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.zone-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+table th, table td {
+    font-size: small;
+    border: 1px solid var(--text-color-principal);
+    padding: 0.5rem;
+    text-align: left;
+}
+
+table th {
+    background-color: var(--secondary-color);
+    color: var(--text-color-secundarios);
+}
+
+footer {
+    background-color: var(--secundary-color);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+footer nav {
+    margin-top: 0.5rem;
+}
+
+footer a {
+    color: var(--text-color-principal);
+    margin: 0 0.5rem;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--secondary-color);
+}
+
+@media (min-width: 1024px) {
+    
+    header {
+        height: 4rem;
+    }
+
+    header a {
+        font-size: 1rem;
+    }
+
+    #hero {
+        height: 30vh;
+    }
+    
+    #hero h2 {
+        font-size: 2rem;
+    }
+
+    #hero p {
+        font-size: 1.3rem;
+    }
+
+    h2{
+        font-size: 2rem;
+    }
+
+    .p-text{
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 10023px) {
+    #hero {
+    height: 12rem;
+    }
+    #text-hero {
+        height: 100%;
+    }
+    
+    header a {
+        padding: 0.2rem;
+        margin: 0.1rem;
+    }
+
+    .cta-button {
+        margin-top: 4rem;
+    }
+
+    #hero {
+        height: 40vh;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    #hero p {
+        font-size: 1.5rem;
+    }
+
+    #hero h2 {
+        font-size: 3rem;
+    }
+
+    h1 {
+        margin-top: 0.5rem;
+    }
+    header {
+        flex-direction: column;
+        text-align: center;
+        position: relative;
+        padding: 1rem;
+    }
+
+    .menu-icon {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: var(--secundary-color);
+        padding: 0.5rem;
+        border-radius: 4px;
+    }
+
+    #links-a {
+        display: none;
+        flex-direction: column;
+        background-color: var(--secundary-color);
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        right: 0;
+        padding: 1rem 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    }
+
+    .menu-toggle:checked + .menu-icon + #links-a {
+        width: 12rem;
+        display: flex;
+        z-index: 10;
+    }
+
+    #hero {
+        height: 70vh;
+        text-align: center;
+    }
+
+    #text-hero {
+        align-items: center;
+    }
+
+    #sec-p {
+        display: flex;
+    }
+
+    #hero h3 {
+        margin: 0rem;
+        font-size: 1.7rem;
+        font-weight: 600;
+    }
+
+    .galeria-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .food-zones-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonios-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        border-radius: 0;
+        margin: 0;
+    }
+    
+    footer{
+        margin: 0;
+    }
+
+    footer p, footer nav {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    #hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .p-hero {
+        margin: 1rem 0.5rem;
+    }
+    
+    #hero p {
+        font-size: 12px;
+    }
+
+    .cta-button {
+        display: none;
+    }
+}
+
