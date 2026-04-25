@@ -1,0 +1,80 @@
+:root{
+    /* para el fondo */
+    --primary-color: #0B1320;
+    /* para secciones y cards */
+    --secundary-color: #1C2541;
+    /*botones, hover, detalles importantes*/
+    --secondary-color: #F2B544;
+    /*colores del hero*/
+    --hero-color: rgba(11,19,32,0.6);
+    /*colore para el texxto*/
+    --text-color-principal: #CFCFCF;
+    --text-color-secundarios: #2A2A2A;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--primary-color);
+    color: var(--text-color-principal);
+    height: 100vh;
+    width: 100%;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+    padding: 0.5rem;
+    align-items: center;
+}
+
+header a, h1{
+    color: var(--text-color-principal);
+    text-decoration: none;
+    margin: 0.5rem;
+}
+
+header #links-a{
+    margin-left: auto;
+}
+
+header a:hover{
+    color:var(--secondary-color)
+}
+
+#hero{
+    background-image: url("../assets/hero-fondo.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    font-size: 2.5rem;
+}
+
+#sec-p{
+    margin-top: 1rem;
+}
+
+.p-hero{
+    margin: 0.5rem;
+}
+
+#hero p{
+    margin: 0.5;
+    font-size: 1.2rem;
+}
+
+.logo{
+    width: 3.9rem;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
