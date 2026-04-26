@@ -1,4 +1,4 @@
-/* Variables CSS para colores y tipografía */
+
 :root{
     /* para el fondo */
     --primary-color: #0B1320;
@@ -13,7 +13,7 @@
     --text-color-secundarios: #2A2A2A;
 }
 
-/* Reset y estilos base */
+/* estilos base */
 *{
     margin: 0;
     padding: 0;
@@ -328,6 +328,7 @@ footer a:hover {
     }
 }
 
+/*Media cambios de tamaños para dispositivos*/
 @media (max-width: 10023px) {
     #hero {
     height: 12rem;
